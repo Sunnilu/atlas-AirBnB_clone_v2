@@ -1,4 +1,4 @@
-# atlas-AirBnB_clone_v2. By Suntha Lucas, kevin Cyprus Jr.
+# atlas-AirBnB_clone_v2. By Suntha Lucas, Kevin Cyrus Jr.
 
 MySQL
     Group project Python OOP Back-end SQL MySQL ORM

@@ -4,7 +4,7 @@
 from models.base_model import BaseModel
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
-from config import storage_t
+from models.config import storage_t
 import models
 
 class User(BaseModel):

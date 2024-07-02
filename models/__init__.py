@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" Models package, defines storage type """
 
 from os import getenv
 

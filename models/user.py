@@ -4,12 +4,12 @@
 from models.base_model import BaseModel
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
-from models.config import storage_t
+from models.base_model import storage_t
 import models
 
 class User(BaseModel):
     """ Class User """
-    if models.config == 'db':
+    if models.base_model == 'db':
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)

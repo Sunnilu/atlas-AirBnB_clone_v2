@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import models
 
 Base = declarative_base()
-
+storage_t = 'db'
 
 class BaseModel:
     """A base class for all hbnb models"""

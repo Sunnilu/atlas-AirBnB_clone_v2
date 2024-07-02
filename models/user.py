@@ -9,7 +9,7 @@ import models
 
 class User(BaseModel):
     """ Class User """
-    if models.storage_t == 'db':
+    if models.config == 'db':
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)

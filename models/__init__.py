@@ -2,6 +2,7 @@
 """ Models package, defines storage type """
 
 from os import getenv
+from .base_model import BaseModel
 
 storage_t = getenv("HBNB_TYPE_STOARGE")
 

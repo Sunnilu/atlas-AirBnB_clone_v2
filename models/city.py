@@ -4,7 +4,7 @@ from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 import models
-from config import storage_t
+from models.config import storage_t
 
 
 class City(BaseModel, Base):

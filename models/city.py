@@ -10,6 +10,8 @@ from models.config import storage_t
 class City(BaseModel, Base):
     """ The city class, contains state ID and name """
     __tablename__ = 'cities'
+    # Check the global storage type 
+    # to decide on the class attributes
     if storage_t == "db":
         __tablename__ = 'cities'
         name = Column(String(128), nullable=False)

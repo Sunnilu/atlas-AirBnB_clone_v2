@@ -32,7 +32,8 @@ class FileStorage:
             json.dump(temp, f)
 
     def reload(self):
-        """Loads storage dictionary from file"""
+        """Loads storage dictionary from JSON, imports classes,
+           reads files and recreates objects"""
         from models.base_model import BaseModel
         from models.user import User
         from models.place import Place

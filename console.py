@@ -112,29 +112,33 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ Overrides the emptyline method of CMD """
         pass
+def do_create(self, args):
+    """Create an object of any class"""
+    my_list = args.split(' ')
+    if not args:
+        print("** class name missing **")
+        return
+    elif my_list[0] not in HBNBCommand.classes:
+        print("** class doesn't exist **")
+        return
 
-    def do_create(self, args):
-        """ Create an object of any class"""
-        my_list = args.split(' ')
-        if not args:
-            print("** class name missing **")
-            return
-        elif my_list[0] not in HBNBCommand.classes:
-            print("** class doesn't exist **")
-            return
-        new_instance = HBNBCommand.classes[my_list[0]]()
-        print(new_instance.id)
-        for params in my_list[1:]:
-            key_value = params.split('=')
-            key = key_value[0]
-            value = key_value[1]
-            table = {
-                34: None,  # Replace " with Nothing
-                95: 32  # Replace _ with space
-            }
-            value = value.translate(table)
-            setattr(new_instance, key, value)
-        new_instance.save()  # Save to storage
+    new_instance = HBNBCommand.classes[my_list[0]]()
+    print(f"Created {new_instance.__class__.__name__} instance with id {new_instance.id}")
+    for params in my_list[1:]:
+        key_value = params.split('=')
+        key = key_value[0]
+        value = key_value[1]
+        # Handle special cases for string and float values
+        if '"' in value:
+            value = value.replace("\\\"", "\"").replace("_", " ")  # Unescape quotes and replace underscores with spaces
+        elif '.' in value:
+            value = float(value)  # Convert to float
+        else:
+            value = int(value)  # Default to integer
+
+        setattr(new_instance, key, value)
+    new_instance.save()  # Save to storage
+
 
     def help_create(self):
         """ Help information for the create method """

@@ -33,12 +33,17 @@ Support classes:
     Review
 
 We used the following commands:
-    Create
-    Show
-    Destroy
-    All
-    quit/EOF
-    Help
+    Create - Promts the user to create a new object of the specified class.
+
+    Show - Prints the string representation of an object.
+
+    Destroy - Deletes an instance based on the name and id.
+
+    All - Shows all instances of a class.
+
+    quit/EOF - Quit the program.
+
+    Help - Provides the user with help menu.
 
 Environment variables were our best friend for this project!
 

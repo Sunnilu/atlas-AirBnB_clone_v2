@@ -16,9 +16,11 @@ class City(BaseModel, Base):
         state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
         places = relationship('Place', cascade='all, delete', backref='cities')
     else:
+        # For file system storage, placeholders are 
+        # defined instead of actual columns
         state_id = ""
         name = ""
 
     def __init__(self, *args, **kwargs):
-        """ """
+        # Call the parent class initializer
         super().__init__(*args, **kwargs)

@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+This is a multi-line comment.
+It spans multiple lines.
+'''
 
 from flask import Flask
 

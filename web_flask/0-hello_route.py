@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''
-This is a multi-line comment.
-It spans multiple lines.
+start a flask web application
 '''
 
 from flask import Flask

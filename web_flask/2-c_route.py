@@ -18,14 +18,15 @@ def hbnb():
 
     return "HBNB"
 
+
 @app.route('/c/<text>', methods=['GET'], strict_slashes=False)
 def c(text):
     # Replace underscores with spaces
-    
+
+
     text = text.replace('_', ' ')
     return "C {}".format(text)
 
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
-

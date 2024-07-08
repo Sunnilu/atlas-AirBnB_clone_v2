@@ -7,24 +7,12 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 3306,
-            "driver": "MySQL",
-            "name": "localhost",
-            "database": "mysql",
-            "username": "localhost"
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "xprotocol"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
             "driver": "MariaDB",
             "name": "MYSQL Local",
-            "database": "33060",
-            "username": "Sunnilu",
-            "password": "yhp_MCJM6LeozU5j5aSChDi6B0wbAo5wpu0lpTcH",
-            "connectionTimeout": 30
+            "database": "HBNB_MYSQL_DB",
+            "username": "HBNB_MYSQL_USER",
+            "connectionTimeout": 30,
+            "password": ""
         }
     ],
     "python.testing.unittestArgs": [

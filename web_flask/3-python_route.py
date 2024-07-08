@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Flask web application func that redirects and has default al for variable """
+""" func that redirects and has default al for variable """
 
 from flask import Flask
 
@@ -30,7 +30,7 @@ def python(text):
     # Replace underscores with spaces
     text = text.replace('_', ' ')
     return "Python {}".format(text)
-    
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

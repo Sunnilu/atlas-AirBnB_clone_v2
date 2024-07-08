@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 '''
-start a flask web application
+Script that starts a Flask web application:
 '''
 
 from flask import Flask
 
 app = Flask(__name__)
-app.url_map.strict_slashes=False
 
-@app.route('/')
+@app.route('/', methods=['GET'], strict_slashes=False)
 def home():
     return "Hello HBNB!"
 
-app.route('/hbnb') 
+@app.route('/hbnb', methods=['GET'], strict_slashes=False)
 def hbnb():
     return "HBNB"
 

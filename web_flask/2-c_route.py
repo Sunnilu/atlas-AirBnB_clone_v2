@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 '''
-script that starts a Flask web application:
+Script that starts a Flask web application:
 '''
 
 from flask import Flask
 
-app = Flask(__name__, strict_slashes=False)
+app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET'], strict_slashes=False)
 def home():
     return "Hello HBNB!"
 
-@app.route('/hbnb', methods=['GET'])
+@app.route('/hbnb', methods=['GET'], strict_slashes=False)
 def hbnb():
     return "HBNB"
 
-@app.route('/c/<text>', methods=['GET'])
+@app.route('/c/<text>', methods=['GET'], strict_slashes=False)
 def c(text):
     # Replace underscores with spaces
     text = text.replace('_', ' ')
@@ -23,4 +23,5 @@ def c(text):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
 

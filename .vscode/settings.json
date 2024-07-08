@@ -26,5 +26,14 @@
             "password": "yhp_MCJM6LeozU5j5aSChDi6B0wbAo5wpu0lpTcH",
             "connectionTimeout": 30
         }
-    ]
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./web_flask",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }

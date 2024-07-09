@@ -1,23 +1,13 @@
-#!/bin/python3
+#!/usr/bin/python3
 
-import os
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from models.base_model import Base
+from sqlalchemy.orm import sessionmaker, scoped_session
 
-# Define database connection URL
-db_url = 'mysql+mysqlconnector://{}:{}@{}/{}'.format(
-    os.getenv('HBNB_MYSQL_USER'),
-    os.getenv('HBNB_MYSQL_PWD'),
-    os.getenv('HBNB_MYSQL_HOST'),
-    os.getenv('HBNB_MYSQL_DB')
-)
+from models.state import Base
 
-# Create SQLAlchemy engine
-engine = create_engine(db_url, pool_pre_ping=True)
-
-# Create session maker
-Session = sessionmaker(bind=engine)
-
-# Create all tables in the database if they don't exist
+# Configure the database connection
+engine = create_engine('sqlite:///your_database.db')
 Base.metadata.create_all(engine)
+
+# Create a scoped session
+Session = scoped_session(sessionmaker(bind=engine, expire_on_commit=False))

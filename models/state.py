@@ -6,9 +6,17 @@ from os import getenv
 from sqlalchemy.orm import relationship
 
 
-class State(BaseModel, Base):
-    """ State class """
-    __tablename__ = 'states'
+class State:
+    def __init__(self, name):
+        self.name = name
+        self.cities = []  # Placeholder for actual city association logic
+
+    @property
+    def cities(self):
+        # Return a list of City objects associated with this State
+        # This is just a placeholder; you'll need to replace it with actual logic
+        return self.cities
+
 
     if getenv('HBNB_TYPE_STORAGE') == 'db':
         name = Column(String(128), nullable=False)

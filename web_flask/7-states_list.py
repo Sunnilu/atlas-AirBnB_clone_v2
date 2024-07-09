@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ 7. Start flask service begins Flask web application: """
 
+
 from flask import Flask
 from flask import render_template
 from models import *
@@ -25,8 +26,3 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
 
-#@app.route()
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)

@@ -11,18 +11,16 @@ from models.place import Place
 from models.review import Review
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import session
 
 
 class DBStorage:
-    """This class creates the engine for a mysql database
-    storage system"""
+    def __init__(self):
+        self.__session = Session()
 
-    all_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place,
-                   "Review": Review}
-    __engine = None
-    __session = None
+    def close(self):
+        self.__session.remove()
+
 
     def __init__(self):
         """Instatiate the engine and drop if test database"""

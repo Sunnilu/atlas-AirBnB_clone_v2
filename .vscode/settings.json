@@ -1,20 +1,5 @@
 {
-    "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MariaDB",
-            "name": "MYSQL Local",
-            "database": "HBNB_MYSQL_DB",
-            "username": "HBNB_MYSQL_USER",
-            "connectionTimeout": 30,
-            "password": ""
-        }
-    ],
+    "sqltools.connections": [],
     "python.testing.unittestArgs": [
         "-v",
         "-s",

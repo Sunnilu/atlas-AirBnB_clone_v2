@@ -25,14 +25,12 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-        """Instatiate the engine and drop if test database"""
-        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".format(
-            os.environ['HBNB_MYSQL_USER'],
-            os.environ['HBNB_MYSQL_PWD'],
-            os.environ['HBNB_MYSQL_HOST'],
-            os.environ['HBNB_MYSQL_DB']), pool_pre_ping=True)
-        if os.getenv('HBNB_ENV') == 'test':
-            Base.metadata.drop_all(self.__engine)
+        self.__session = Session()
+
+    def close(self):
+        self.__session.remove()
+        self.__session = Session()
+
 
     def all(self, cls=None):
         """Query all objects for curent session based on class name"""

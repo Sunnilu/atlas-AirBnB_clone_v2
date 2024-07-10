@@ -21,6 +21,22 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
+
+    def __init__(self):
+        self._objects = {}
+
+    def reload(self):
+        # Deserialize JSON file to objects
+        with open("file.json", "r") as f:
+            data = json.load(f)
+            for obj_data in data.values():
+                obj = BaseModel(**obj_data)
+                setattr(self, obj.id, obj)
+
+    def close(self):
+        self.reload()
+
+
     def all(self, cls=None):
         """returns a dictionary
         Return:
